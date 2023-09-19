@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Run a one-line script
-        run: echo "Hello, world! ${{ env.TEST_VARIABLE }}"
+        run: echo "$GITHUB_CONTEXT"
 
   deploy-prod:
     runs-on: ubuntu-latest
