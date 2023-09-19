@@ -15,17 +15,13 @@ jobs:
     environment: staging
 
     steps:
-      - uses: actions/checkout@v3
-
       - name: Run a one-line script
-        run: echo Hello, world! $TEST_VARIABLE
+        run: echo "Hello, world! ${{ env.TEST_VARIABLE }}"
 
   deploy-prod:
     runs-on: ubuntu-latest
     environment: prod
 
     steps:
-      - uses: actions/checkout@v3
-
       - name: Run a one-line script
-        run: echo Hello, world! $TEST_VARIABLE
+        run: echo "Hello, world! ${{ env.TEST_VARIABLE }}"
