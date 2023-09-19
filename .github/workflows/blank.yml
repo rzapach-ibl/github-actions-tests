@@ -13,15 +13,19 @@ jobs:
   deploy-staging:
     runs-on: ubuntu-latest
     environment: staging
-
     steps:
       - name: Run a one-line script
-        run: echo '${{ toJSON(github) }}'
+        run: echo '${{ vars.TEST_VARIABLE }}'
 
   deploy-prod:
     runs-on: ubuntu-latest
     environment: prod
-
     steps:
       - name: Run a one-line script
-        run: echo "Hello, world! ${{ env.TEST_VARIABLE }}"
+        run: echo '${{ vars.TEST_VARIABLE }}'
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo '${{ vars.TEST_VARIABLE }}'
