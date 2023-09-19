@@ -9,6 +9,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  TEST_VARIABLE: TEST_VARIABLE
+
 jobs:
   deploy-staging:
     runs-on: ubuntu-latest
@@ -18,12 +21,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run a one-line script
-        run: echo Hello, world! ${{ env.TEST_VARIABLE }} and ${{ env.TEST_SECRET }}
-
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: echo Hello, world! $TEST_VARIABLE
 
   deploy-prod:
     runs-on: ubuntu-latest
@@ -33,9 +31,4 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run a one-line script
-        run: echo Hello, world! ${{ env.TEST_VARIABLE }} and ${{ env.TEST_SECRET }}
-
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: echo Hello, world! $TEST_VARIABLE
