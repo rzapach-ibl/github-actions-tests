@@ -17,7 +17,8 @@ on:
 jobs:
   deploy-prod:
     runs-on: ubuntu-latest
-    if:  ${{ inputs.environment }} == 'prod'
+    # TODO: doesn't work this way
+    # if:  ${{ inputs.environment }} == 'prod'
     environment: prod
     steps:
       - name: Run a one-line script
@@ -25,7 +26,7 @@ jobs:
 
   deploy-staging:
     runs-on: ubuntu-latest
-    if:  ${{ inputs.environment }} == 'staging'
+    # if:  ${{ inputs.environment }} == 'staging'
     environment: staging
     steps:
       - name: Run a one-line script
